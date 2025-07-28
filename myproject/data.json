@@ -1,0 +1,1919 @@
+[
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "admin",
+    "model": "logentry"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "permission"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "group"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "auth",
+    "model": "user"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "contenttypes",
+    "model": "contenttype"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sessions",
+    "model": "session"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "soulink",
+    "model": "post"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "soulink",
+    "model": "comment"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "taggit",
+    "model": "tag"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "taggit",
+    "model": "taggeditem"
+  }
+},
+{
+  "model": "contenttypes.contenttype",
+  "fields": {
+    "app_label": "sites",
+    "model": "site"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "vz3slr19chakhx8251ycdm8qzajvbzvo",
+  "fields": {
+    "session_data": ".eJxVjMEOwiAQRP-FsyFAWASP3v0GssuuUjU0Ke2p8d9tkx70Npn3ZlaVcZlrXrpMeWB1UVadfjvC8pK2A35ie4y6jG2eBtK7og_a9W1keV8P9--gYq_bGiIjWAqQmEKBKKVE7zkFFPSAJBbBeHY2kglb8AR3ezYMCdm5xOrzBfS_OCg:1uKy3Y:SjrtzC-Rl2k6h8rRy8UtkvSCVuqBDXGyMO3EY2GEOMU",
+    "expire_date": "2025-06-13T11:37:48.747Z"
+  }
+},
+{
+  "model": "soulink.comment",
+  "pk": 1,
+  "fields": {
+    "post": 8,
+    "name": "Aakansha Singh",
+    "email": "aakanshasingh1910@gmail.com",
+    "body": "This is cool",
+    "created": "2025-06-02T17:43:35.306Z",
+    "updated": "2025-06-02T17:43:35.306Z",
+    "active": true
+  }
+},
+{
+  "model": "soulink.comment",
+  "pk": 2,
+  "fields": {
+    "post": 7,
+    "name": "Aakansha Singh",
+    "email": "joy123@gmail.com",
+    "body": "this is awesome",
+    "created": "2025-06-02T18:01:08.495Z",
+    "updated": "2025-06-02T18:01:08.495Z",
+    "active": true
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "Nature",
+    "slug": "nature-and-wildlife"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "django",
+    "slug": "django"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "cars",
+    "slug": "cars"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "coding",
+    "slug": "coding"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "animals",
+    "slug": "animals"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "autmobiles",
+    "slug": "autmobiles"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "fashion",
+    "slug": "fashion"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "clothing",
+    "slug": "clothing"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "summer",
+    "slug": "summer"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "health",
+    "slug": "health"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "workout",
+    "slug": "workout"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "wellbeing",
+    "slug": "wellbeing"
+  }
+},
+{
+  "model": "taggit.tag",
+  "fields": {
+    "name": "games",
+    "slug": "games"
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "Nature"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 7
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "cars"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 8
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "django"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 5
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "coding"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 5
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "animals"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 7
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "autmobiles"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 8
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "fashion"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "clothing"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "summer"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 6
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "health"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "health"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 3
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "workout"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 3
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "wellbeing"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 2
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "wellbeing"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 4
+  }
+},
+{
+  "model": "taggit.taggeditem",
+  "fields": {
+    "tag": [
+      "games"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": 1
+  }
+},
+{
+  "model": "sites.site",
+  "fields": {
+    "domain": "Localhost:8000",
+    "name": "Localhost:8000"
+  }
+},
+{
+  "model": "sites.site",
+  "fields": {
+    "domain": "127.0.0.1:8000",
+    "name": "127.0.0.1"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "add_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "change_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "delete_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view log entry",
+    "content_type": [
+      "admin",
+      "logentry"
+    ],
+    "codename": "view_logentry"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "add_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "change_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "delete_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view permission",
+    "content_type": [
+      "auth",
+      "permission"
+    ],
+    "codename": "view_permission"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "add_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "change_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "delete_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view group",
+    "content_type": [
+      "auth",
+      "group"
+    ],
+    "codename": "view_group"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "add_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "change_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "delete_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view user",
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "codename": "view_user"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "add_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "change_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "delete_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view content type",
+    "content_type": [
+      "contenttypes",
+      "contenttype"
+    ],
+    "codename": "view_contenttype"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "add_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "change_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "delete_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view session",
+    "content_type": [
+      "sessions",
+      "session"
+    ],
+    "codename": "view_session"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add post",
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "codename": "add_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change post",
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "codename": "change_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete post",
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "codename": "delete_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view post",
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "codename": "view_post"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add comment",
+    "content_type": [
+      "soulink",
+      "comment"
+    ],
+    "codename": "add_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change comment",
+    "content_type": [
+      "soulink",
+      "comment"
+    ],
+    "codename": "change_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete comment",
+    "content_type": [
+      "soulink",
+      "comment"
+    ],
+    "codename": "delete_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view comment",
+    "content_type": [
+      "soulink",
+      "comment"
+    ],
+    "codename": "view_comment"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add tag",
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "codename": "add_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change tag",
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "codename": "change_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete tag",
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "codename": "delete_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view tag",
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "codename": "view_tag"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add tagged item",
+    "content_type": [
+      "taggit",
+      "taggeditem"
+    ],
+    "codename": "add_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change tagged item",
+    "content_type": [
+      "taggit",
+      "taggeditem"
+    ],
+    "codename": "change_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete tagged item",
+    "content_type": [
+      "taggit",
+      "taggeditem"
+    ],
+    "codename": "delete_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view tagged item",
+    "content_type": [
+      "taggit",
+      "taggeditem"
+    ],
+    "codename": "view_taggeditem"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can add site",
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "codename": "add_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can change site",
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "codename": "change_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can delete site",
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "codename": "delete_site"
+  }
+},
+{
+  "model": "auth.permission",
+  "fields": {
+    "name": "Can view site",
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "codename": "view_site"
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "pbkdf2_sha256$1000000$j0AmSSavEgclin9phjO4eO$0049oZuBKfaFho53/ZEm3Tl18IGOiBRTWLnYJ0PdO4g=",
+    "last_login": "2025-05-30T11:37:48.677Z",
+    "is_superuser": true,
+    "username": "akka",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": true,
+    "is_active": true,
+    "date_joined": "2025-05-30T11:37:29.398Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "!e66cenjoVFgnu0cQOiPG5U0BbIpq8Enqz1aYMU5I",
+    "last_login": "2025-05-30T11:52:51Z",
+    "is_superuser": false,
+    "username": "Aaryan",
+    "first_name": "",
+    "last_name": "",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-05-30T11:52:44Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "!4rgp7OUXSTGhITt03Rfy8BveAANDQuOUvdRynhuC",
+    "last_login": "2025-06-01T11:49:12Z",
+    "is_superuser": false,
+    "username": "Arti",
+    "first_name": "Arti",
+    "last_name": "Kumari",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-01T11:47:45Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "!pmDgrrSZEvnXtX8oHyNnXOpnwFBQvhNirZ1o73rp",
+    "last_login": "2025-06-01T11:54:16Z",
+    "is_superuser": false,
+    "username": "Mohit",
+    "first_name": "Mohit",
+    "last_name": "Gaur",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-01T11:53:56Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "!BGbYYx0YOgJbKAEPauQGWMOIan928oSErduAfl5s",
+    "last_login": "2025-06-01T12:01:39Z",
+    "is_superuser": false,
+    "username": "Anya",
+    "first_name": "Anya",
+    "last_name": "Yaduvanshi",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-01T12:01:24Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "auth.user",
+  "fields": {
+    "password": "!J9Q9SIxPozIZ42ZHNHTkFQ1EDntadI7gmxqWUhr3",
+    "last_login": "2025-06-01T12:06:40Z",
+    "is_superuser": false,
+    "username": "Manya",
+    "first_name": "Manya",
+    "last_name": "Jay Singh",
+    "email": "",
+    "is_staff": false,
+    "is_active": true,
+    "date_joined": "2025-06-01T12:06:24Z",
+    "groups": [],
+    "user_permissions": []
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 1,
+  "fields": {
+    "title": "Importance of Video games",
+    "slug": "Gaming",
+    "author": [
+      "Aaryan"
+    ],
+    "body": "Video games have been given a bad reputation. Many people think that video games are antisocial and mind-numbing. However, researchers have actually found that the opposite is true. Research shows that video games can create a more interactive social environment and can improve learning. One way that children learn, grow, and express themselves is through play. Video games allow children to immerse themselves in a new world, adapt to different realities, and build skills at their own pace. Play helps children (and adults!) learn important life skills like problem solving, coordination, and social skills.",
+    "publish": "2025-06-01T11:46:21Z",
+    "created": "2025-05-30T11:53:28.906Z",
+    "updated": "2025-06-01T11:46:27.226Z",
+    "status": "published"
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 2,
+  "fields": {
+    "title": "Developing Emotional Maturity",
+    "slug": "developing-emotional-maturity",
+    "author": [
+      "Arti"
+    ],
+    "body": "Emotional maturity involves managing emotions thoughtfully & responding to situations with insight & restraint, promoting healthier relationships & decision-making.\r\nDeveloping emotional maturity requires self-awareness, empathy, accountability & the ability to handle conflict constructively.\r\nPracticing mindfulness & actively reflecting on emotional responses can enhance emotional maturity, fostering personal growth & well being.\r\nEmotional maturity. We all like to think that we’re emotionally mature, but are we really?\r\n\r\nHaving the courage to take an unbiased look at where we may need to improve ourselves can have significant benefits for our relationships, work, and well being.\r\n\r\nIn recent years the concept of emotional maturity has taken a back seat to its more popular cousin, emotional intelligence. Are they the same? Is emotional maturity just an old-fashioned term for emotional intelligence?\r\n\r\nBefore you continue, we thought you might like to download our three Emotional Intelligence Exercises for free. These science-based exercises will enhance your ability to understand and work with your emotions and will also give you the tools to foster the emotional intelligence of your clients, students, or employees.",
+    "publish": "2025-06-01T11:49:21Z",
+    "created": "2025-06-01T11:51:36.824Z",
+    "updated": "2025-06-01T11:51:36.824Z",
+    "status": "published"
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 3,
+  "fields": {
+    "title": "At-Home Workout Routines",
+    "slug": "at-home-workout-routines",
+    "author": [
+      "Mohit"
+    ],
+    "body": "At-home workouts offer a convenient and effective way to maintain fitness without the need for a gym membership or expensive equipment. For instance, one can organize a serious amount of information on the benefits of weightlifting, which provides a sense of purpose and inner peace, acting as a form of meditation.\r\n Additionally, bodyweight exercises can be scaled for different fitness levels, from beginners to advanced, and can help build strength, improve aerobic fitness, and manage fat mass.\r\n These exercises can be performed in just 20 minutes, making them ideal for busy schedules. However, it is important to note that for significant health benefits, the Physical Activity Guidelines for Americans recommend at least 150 minutes of moderate-intensity exercise or 75 minutes of high-intensity exercise per week.\r\n\r\nAt-home workouts can also serve as a stress reliever and mental clarity booster. After a workout, one might feel lighter, happier, and more energized, with a sense of accomplishment and a reset mind.\r\n This mental clarity and emotional boost can significantly enhance overall well-being.\r\n\r\nMoreover, a daily workout routine at home can foster discipline and perseverance, helping individuals stick to their goals and improve their focus and efficiency in other areas of life.\r\n It can also inspire those around you, encouraging a supportive and health-conscious environment.\r\n\r\nIn conclusion, at-home workouts are a versatile and motivating way to stay fit and healthy, providing both physical and mental benefits.",
+    "publish": "2025-06-01T11:54:23Z",
+    "created": "2025-06-01T11:55:19.509Z",
+    "updated": "2025-06-01T11:55:56.269Z",
+    "status": "published"
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 4,
+  "fields": {
+    "title": "Psycopathy",
+    "slug": "psycopathy",
+    "author": [
+      "Arti"
+    ],
+    "body": "Psychopathy is a complex personality disorder characterized by a lack of empathy, guilt, and remorse, often leading to manipulative and antisocial behaviour. Individuals with psychopathy are typically intelligent and charismatic but exhibit chronic inability to register feelings of guilt or remorse for their actions, distinguishing them from the general population (Hart and Hare 1997\r\n ). The nature versus nurture debate is central to understanding the origins of psychopathy, with some studies suggesting a genetic predisposition and others pointing to environmental factors such as childhood trauma or abuse .\r\nPsychopaths are often portrayed in popular culture as cold-blooded killers, but this stereotype is not always accurate. While many psychopaths do engage in criminal behaviour, others may lead seemingly normal lives without committing violent acts. The ethical considerations surrounding the diagnosis and treatment of psychopathy are significant, as many mental health professionals are divided on the best approach to managing these individuals, particularly within legal contexts",
+    "publish": "2025-06-01T11:57:02Z",
+    "created": "2025-06-01T11:58:14.126Z",
+    "updated": "2025-06-01T11:58:14.126Z",
+    "status": "published"
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 5,
+  "fields": {
+    "title": "Django",
+    "slug": "django",
+    "author": [
+      "akka"
+    ],
+    "body": "Django is a high-level Python framework that simplifies web development by handling complex tasks for you, allowing developers to focus on building their applications without reinventing the wheel.\r\n It follows the \"Don't Repeat Yourself\" (DRY) principle, promoting reusable components and making development faster.\r\n\r\nDjango's built-in features include user authentication, database connections, and CRUD operations, which streamline web development processes.\r\n It uses the MVT (Model-View-Template) design pattern: Model represents the data, View handles incoming requests, and Template defines the structure of the web page.\r\n\r\nOne of Django's standout features is its automatic admin interface, which reads metadata in your models to provide a powerful and production-ready interface that content producers can immediately use to manage content.\r\n Django also provides a full-featured and secure authentication system that handles user accounts, groups, permissions, and cookie-based user sessions.\r\n\r\nDjango's ORM (Object-Relational Mapping) is powerful and allows for efficient querying and manipulation of data.\r\n It abstracts the database operations, making it easier to work with databases without needing to write raw SQL.\r\n\r\nDjango is known for its scalability and robustness, used by top companies like Instagram, Disquss, Spotify, and YouTube.\r\n It supports internationalization, allowing developers to translate text into different languages and format dates, times, numbers, and time zones according to local preferences.",
+    "publish": "2025-06-01T11:58:29Z",
+    "created": "2025-06-01T11:59:53.506Z",
+    "updated": "2025-06-01T11:59:53.506Z",
+    "status": "published"
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 6,
+  "fields": {
+    "title": "Six of My Summer Essentials",
+    "slug": "Fashion",
+    "author": [
+      "Anya"
+    ],
+    "body": "The mercury has finally risen, and the pool is open. Sloane would swim every day if she could. Twice per day if it was possible. So this list of Summer Essentials is geared toward the pool.\r\n\r\n\r\nOne. I have purchased so many affordable summer hats over the years from Old Navy, Nordstrom and the like. $50 for a straw hat that is too rumpled to use again the next summer. But no more.\r\n\r\nThis Cuyana Open Weave Ecuador hat with its wide brim, breezy style and neutral band is the one I’m selecting. At just-under-$100, it isn’t cheap, but hopefully, I’m still wearing it in 2035. Or at least 2028.\r\n\r\nTwo. As a 42-year-old (for one more day) woman, I wear a bit of makeup to the pool. If 26-year-old influencers can use filters on Instagram with their “natural makeup” tutorial, I can put on a bit of skin tint to go for a swim. But wearing makeup makes reapplying sunscreen difficult, so I’m glad this Shiseido stick sunscreen can be applied under or over makeup with no white cast and no cakey look. Need an affordable alternative? e.l.f has one for <$15.\r\n\r\nThree. As you know, the Andie Malibu saved me from the throes of boring Mom swimwear last year. I own three. But this season, I wanted something in a punchier color, so I chose this raspberry Tulum suit. I love the criss-cross back and the scoop neck. It’s not as compressive (ie: shaping) as the Malibu, but it still looks great on.\r\n\r\nAlso, on the Andie sizing, I find it runs just slightly small. The size guide says I’m a medium, but I’m just happier in a large. Better to be comfortable in the suit than have the “comfortable” with the number on the tag, you know what I mean?\r\n\r\nLastly, I wear nipple covers under all my swimsuits. I’m just not in the mood to have headlights at the pool. And I’m told that if you struggle with your navel being visible through your suit, a nipple cover will smooth that out also.\r\n\r\nFour. I have a confession to make: I do not always make time to get a wax in the summer. So sometimes going to the pool requires more coverage. Luckily, these Baleaf board shorts are there to save me. They have a 5″ inseam, flat front styling and run up to 3x. They also come in a bunch of colors. And they mostly dry in the time it takes to change and redress a toddler.\r\n\r\nFive. Your jewelry is not safe at the pool. Let me say it again for the people in the back: If you are wearing jewelry you care about to the pool, you are making a mistake. Instead, pick up a pair of water resistant hoops. They look great with a wet bun or sun hat. And you can find necklaces, anklets, bracelets and more that are pool friendly at Nordstrom Rack.\r\n\r\nSix. Clogs might seem like a strange pool choice, but let me explain. Have you ever slipped on a pair of hot leather sandals that have been sitting out on a pool deck? I have. So I bought a pair of plastic-Birkenstocks, they’re a great shoe for walking by the pool, but they kill my feet if I wear them for longer than a 45-minutes. So I put my “summer slippers” these Rothy’s clogs in the car to make the drive home and any post-pool errands easier.\r\n\r\nSo what are your summer essentials, the products you feel like just make life in the warmer weather easier?",
+    "publish": "2025-06-01T12:01:45Z",
+    "created": "2025-06-01T12:02:41.027Z",
+    "updated": "2025-06-01T12:02:41.027Z",
+    "status": "published"
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 7,
+  "fields": {
+    "title": "From Conflict to Coexistence: Thriving Together with Wildlife",
+    "slug": "nature-and-wildlife",
+    "author": [
+      "Manya"
+    ],
+    "body": "Growing up in Sri Lanka, I developed a love of wildlife — especially elephants. But I also saw the devastating toll of human-wildlife conflict. Families lost their crops overnight. Retaliatory killings of elephants became tragically common. These experiences shaped my commitment to conservation and led me to work on coexistence strategies not just in Sri Lanka, but around the world. And what I’ve learned is that true coexistence isn’t about choosing between people and animals. It’s about rethinking how we share space.\r\n\r\nAround the world, people and wildlife are sharing space more than ever before. Since 2021, over half of Earth’s terrestrial surface has been shared by both humans and wildlife — a number that continues to rise. As cities sprawl, farms expand, and infrastructure cuts through habitats, encounters between people and wildlife become inevitable. But these interactions are often negative. When elephants feed on crops, wolves prey on livestock, or leopards wander into villages, human-wildlife conflict occurs. And this isn’t just a rural issue. Whether it’s raccoons in city trash cans or deer eating suburban gardens, human-wildlife conflict can happen anywhere. In response, people often build fences, use noise deterrents, or even retaliate against animals. Yet these short-term fixes rarely address the deeper challenge: how can we coexist with wildlife on our increasingly shared planet?\r\n\r\nHuman-wildlife conflict isn’t a new problem, but it is becoming more prevalent. Climate change is creating more competition for shared resources like drinking water and nutritious food, deforestation is shrinking habitats, and infrastructure is fragmenting animal migration corridors. As a result, wildlife is squeezed into smaller spaces, bringing them into greater conflict with people. The consequences ripple outward—impacted livelihoods, increased tensions, and, in some cases, human and wildlife injury and death. Negative interactions with wildlife can impact society at all levels, from global production and supply chains, to businesses, food security, and regional and national economies. Despite the scale of the issue, solutions have often been reactive and piecemeal. What’s needed is a shift in perspective: treating human-wildlife conflict not as a battle to be won, but as a challenge to be addressed through collaboration, innovation, and respect for both human and animal needs.",
+    "publish": "2025-06-01T12:06:52Z",
+    "created": "2025-06-01T12:07:58.944Z",
+    "updated": "2025-06-01T12:07:58.944Z",
+    "status": "published"
+  }
+},
+{
+  "model": "soulink.post",
+  "pk": 8,
+  "fields": {
+    "title": "Aston Martin Celebrates Summertime Cruising with One-Off DB12 Palm Beach Edition",
+    "slug": "cars-and-automobiles",
+    "author": [
+      "Aaryan"
+    ],
+    "body": "A drop-top in a warm state like California or Florida is never a bad recipe for a good time. Make that drop-top an Aston Martin, and the good times increase tenfold. The British automaker seems to have taken note of this and recently revealed the one-of-one “Palm Beach Edition DB12 Volante,” a special edition of their powerful V8 sports car created in collaboration with Aston Martin’s Q division and Aston Martin Palm Beach.\r\n\r\n“This extraordinary DB12 Volante model perfectly encapsulates the understated elegance of both Palm Beach and Aston Martin,” said Pedro Mota, Regional President of Aston Martin The Americas. “Through a collaboration with Q by Aston Martin and Aston Martin Palm Beach, we have created an exceptional sports car that merges stunning performance, artistry, and luxury.”\r\n\r\nAston Martin DB12 Palm Beach Edition\r\nThe Palm Beach Edition DB12 Volante sports a unique Frosted Glass Blue paint job with ample shimmer in the topcoat to remind you of the sun at your favorite South Florida beachside spot. Word around town is that Aston Martin hand-sprayed the paint onto the car to get the effect, and that’s the kind of attention to detail we can’t be mad at.\r\n\r\nThe interior carries a matching Aurora Blue scheme with Ivory Leather and contrasting Spicy Red stitching. Here’s where it gets better, though. The dash, center console, doors, and seatbacks feature book-matched Linear Light Olive Ash wood trim for that perfect beach cabana vibe anywhere you are in the car. The last few special touches include Palm Beach’s latitude and longitude coordinates embossed onto the leather dashboard, as well as a palm-leaf motif spread throughout the cabin.",
+    "publish": "2025-06-01T12:08:56Z",
+    "created": "2025-06-01T12:09:50.714Z",
+    "updated": "2025-06-01T12:09:50.714Z",
+    "status": "published"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 1,
+  "fields": {
+    "action_time": "2025-05-30T11:52:44.978Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "Aaryan",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 2,
+  "fields": {
+    "action_time": "2025-05-30T11:52:53.956Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "2",
+    "object_repr": "Aaryan",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Last login\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 3,
+  "fields": {
+    "action_time": "2025-05-30T11:53:28.908Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "1",
+    "object_repr": "He is mad",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 4,
+  "fields": {
+    "action_time": "2025-06-01T11:46:27.231Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "1",
+    "object_repr": "Post object (1)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Title\", \"Slug\", \"Body\", \"Publish\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 5,
+  "fields": {
+    "action_time": "2025-06-01T11:47:45.005Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "Arti",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 6,
+  "fields": {
+    "action_time": "2025-06-01T11:49:17.231Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "3",
+    "object_repr": "Arti",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Last login\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 7,
+  "fields": {
+    "action_time": "2025-06-01T11:51:36.825Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "2",
+    "object_repr": "Post object (2)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 8,
+  "fields": {
+    "action_time": "2025-06-01T11:53:56.729Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "Mohit",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 9,
+  "fields": {
+    "action_time": "2025-06-01T11:54:18.698Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "4",
+    "object_repr": "Mohit",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Last login\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 10,
+  "fields": {
+    "action_time": "2025-06-01T11:55:19.510Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "3",
+    "object_repr": "Post object (3)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 11,
+  "fields": {
+    "action_time": "2025-06-01T11:55:56.271Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "3",
+    "object_repr": "Post object (3)",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Status\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 12,
+  "fields": {
+    "action_time": "2025-06-01T11:58:14.127Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "4",
+    "object_repr": "Post object (4)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 13,
+  "fields": {
+    "action_time": "2025-06-01T11:59:53.507Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "5",
+    "object_repr": "Post object (5)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 14,
+  "fields": {
+    "action_time": "2025-06-01T12:01:24.765Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "Anya",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 15,
+  "fields": {
+    "action_time": "2025-06-01T12:01:41.940Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "5",
+    "object_repr": "Anya",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Last login\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 16,
+  "fields": {
+    "action_time": "2025-06-01T12:02:41.027Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "6",
+    "object_repr": "Post object (6)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 17,
+  "fields": {
+    "action_time": "2025-06-01T12:06:24.751Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "Manya",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 18,
+  "fields": {
+    "action_time": "2025-06-01T12:06:42.881Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "auth",
+      "user"
+    ],
+    "object_id": "6",
+    "object_repr": "Manya",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"First name\", \"Last name\", \"Last login\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 19,
+  "fields": {
+    "action_time": "2025-06-01T12:07:58.945Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "7",
+    "object_repr": "Post object (7)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 20,
+  "fields": {
+    "action_time": "2025-06-01T12:09:50.740Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "soulink",
+      "post"
+    ],
+    "object_id": "8",
+    "object_repr": "Post object (8)",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 21,
+  "fields": {
+    "action_time": "2025-06-04T15:41:06.574Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "4",
+    "object_repr": "Nature",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 22,
+  "fields": {
+    "action_time": "2025-06-04T15:44:59.422Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "1",
+    "object_repr": "game",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 23,
+  "fields": {
+    "action_time": "2025-06-04T15:45:05.812Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "2",
+    "object_repr": "viedogame",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 24,
+  "fields": {
+    "action_time": "2025-06-04T15:45:14.472Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "3",
+    "object_repr": "play",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 25,
+  "fields": {
+    "action_time": "2025-06-04T15:45:49.988Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "4",
+    "object_repr": "Nature",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"tagged item\", \"object\": \"None tagged with Nature\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 26,
+  "fields": {
+    "action_time": "2025-06-04T15:47:05.363Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "5",
+    "object_repr": "django",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 27,
+  "fields": {
+    "action_time": "2025-06-04T17:54:28.919Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "6",
+    "object_repr": "cars",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (2) tagged with cars\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 28,
+  "fields": {
+    "action_time": "2025-06-04T17:55:46.626Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "5",
+    "object_repr": "django",
+    "action_flag": 2,
+    "change_message": "[{\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (5) tagged with django\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 29,
+  "fields": {
+    "action_time": "2025-06-04T17:56:34.126Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "7",
+    "object_repr": "coding",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (5) tagged with coding\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 30,
+  "fields": {
+    "action_time": "2025-06-04T17:57:00.922Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "6",
+    "object_repr": "cars",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"tagged item\", \"object\": \"Post object (8) tagged with cars\", \"fields\": [\"Object ID\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 31,
+  "fields": {
+    "action_time": "2025-06-04T17:57:36.006Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "4",
+    "object_repr": "Nature",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"name\": \"tagged item\", \"object\": \"Post object (7) tagged with Nature\", \"fields\": [\"Content type\", \"Object ID\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 32,
+  "fields": {
+    "action_time": "2025-06-04T17:57:59.140Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "8",
+    "object_repr": "animals",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (7) tagged with animals\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 33,
+  "fields": {
+    "action_time": "2025-06-04T17:58:51.331Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "9",
+    "object_repr": "autmobiles",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (8) tagged with autmobiles\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 34,
+  "fields": {
+    "action_time": "2025-06-04T17:59:13.502Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "10",
+    "object_repr": "fashion",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (6) tagged with fashion\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 35,
+  "fields": {
+    "action_time": "2025-06-04T17:59:24.437Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "11",
+    "object_repr": "clothing",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (6) tagged with clothing\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 36,
+  "fields": {
+    "action_time": "2025-06-04T17:59:45.967Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "12",
+    "object_repr": "summer",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (6) tagged with summer\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 37,
+  "fields": {
+    "action_time": "2025-06-04T18:00:30.040Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "13",
+    "object_repr": "health",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (4) tagged with health\"}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (3) tagged with health\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 38,
+  "fields": {
+    "action_time": "2025-06-04T18:01:06.382Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "14",
+    "object_repr": "workout",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (3) tagged with workout\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 39,
+  "fields": {
+    "action_time": "2025-06-04T18:01:59.305Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "15",
+    "object_repr": "wellbeing",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (2) tagged with wellbeing\"}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (4) tagged with wellbeing\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 40,
+  "fields": {
+    "action_time": "2025-06-04T18:02:22.207Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "taggit",
+      "tag"
+    ],
+    "object_id": "16",
+    "object_repr": "games",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}, {\"added\": {\"name\": \"tagged item\", \"object\": \"Post object (1) tagged with games\"}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 41,
+  "fields": {
+    "action_time": "2025-06-04T19:31:12.515Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "object_id": "1",
+    "object_repr": "example.com",
+    "action_flag": 3,
+    "change_message": ""
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 42,
+  "fields": {
+    "action_time": "2025-06-04T19:36:07.602Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "object_id": "2",
+    "object_repr": "localhost:8000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 43,
+  "fields": {
+    "action_time": "2025-06-04T19:51:21.846Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "object_id": "2",
+    "object_repr": "Localhost:8000",
+    "action_flag": 2,
+    "change_message": "[{\"changed\": {\"fields\": [\"Domain name\", \"Display name\"]}}]"
+  }
+},
+{
+  "model": "admin.logentry",
+  "pk": 44,
+  "fields": {
+    "action_time": "2025-06-04T19:57:03.364Z",
+    "user": [
+      "akka"
+    ],
+    "content_type": [
+      "sites",
+      "site"
+    ],
+    "object_id": "3",
+    "object_repr": "127.0.0.1:8000",
+    "action_flag": 1,
+    "change_message": "[{\"added\": {}}]"
+  }
+}
+]

@@ -1,0 +1,53 @@
+{% extends "blog/base.html" %}
+{% block title %}Subscribe to our blog{% endblock %}
+
+{% block content %}
+  <div class="share-form">
+    <h1>Subscribe to our blog</h1>
+
+    {% if messages %}
+      {% for message in messages %}
+        <p style="color: {% if message.tags == 'success' %}green{% else %}red{% endif %};">
+          <strong>{{ message }}</strong>
+        </p>
+      {% endfor %}
+    {% endif %}
+
+    <form method="post">
+      {% csrf_token %}
+
+      <div class="form-group">
+        <label for="id_name">Name:</label>
+        {{ form.name }}
+        {% if form.name.errors %}
+          <p class="form-error">{{ form.name.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <div class="form-group">
+        <label for="id_email">Email:</label>
+        {{ form.email }}
+        {% if form.email.errors %}
+          <p class="form-error">{{ form.email.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <div class="form-group checkbox-group">
+        <label for="id_accept_notifications">
+          {{ form.accept_notifications }} I accept to receive notifications
+        </label>
+        {% if form.accept_notifications.errors %}
+          <p class="form-error">{{ form.accept_notifications.errors.0 }}</p>
+        {% endif %}
+      </div>
+
+      <button type="submit" class="btn">Subscribe</button>
+    </form>
+    <p>Already a subscriber? <a href="{% url 'blog:unsubscribe' %}">Unsubscribe</a></p>
+
+    <div class="share-links">
+      <a href="{% url 'blog:post_list' %}" class="left-link">← All Posts</a>
+      <a href="/" class="right-link">Home →</a>
+    </div>
+  </div>
+{% endblock %}

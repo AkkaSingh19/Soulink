@@ -1,0 +1,41 @@
+{% extends "blog/base.html" %}
+{% block title %}Unsubscribe{% endblock %}
+
+{% block content %}
+  <div class="form-container">
+    <h2>Unsubscribe from Notifications</h2>
+
+    <p class="form-description">
+      We're sorry to see you go. Please enter your name and email to unsubscribe from our email notifications.
+    </p>
+
+    <form method="post">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for="id_name">Name</label>
+        {{ form.name }}
+      </div>
+      <div class="form-group">
+        <label for="id_email">Email</label>
+        {{ form.email }}
+      </div>
+
+      <p>Are you sure you want to unsubscribe?</p>
+      <div class="form-actions">
+        <button type="submit" class="btn">Yes, Unsubscribe</button>
+      </div>
+    </form>
+
+    {% if messages %}
+      <ul class="messages">
+        {% for message in messages %}
+          <li class="{{ message.tags }}">{{ message }}</li>
+        {% endfor %}
+      </ul>
+    {% endif %}
+
+    <p class="back-link">
+      <a href="{% url 'blog:post_list' %}">← Return to Home</a>
+    </p>
+  </div>
+{% endblock %}

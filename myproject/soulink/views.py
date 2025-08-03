@@ -18,7 +18,7 @@ def post_list(request, tag_slug=None):
     object_list = Post.published.all()  
     tag = None
     if tag_slug:
-          tag = get_object_or_404(Tag, slug=tag_slug)
+          tag = get_object_or_404(Tag)
           object_list = object_list.filter(tags__in=[tag])
     paginator = Paginator(object_list, 5)  # 5 posts per page
     page = request.GET.get('page')
@@ -36,7 +36,6 @@ def post_list(request, tag_slug=None):
 def post_detail(request, year, month, day, post):
           post = get_object_or_404(
                Post,
-               slug=post,
                status='published',
                publish__year=year,
                publish__month=month,

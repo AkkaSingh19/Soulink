@@ -23,8 +23,9 @@ export default function SigninForm() {
         password,
       });
 
-      localStorage.setItem("accessToken", res.data.access);
-      localStorage.setItem("refreshToken", res.data.refresh);
+      localStorage.setItem("access", res.data.access);
+      localStorage.setItem("refresh", res.data.refresh);
+
 
       navigate("/dashboard");
     } catch (err: any) {

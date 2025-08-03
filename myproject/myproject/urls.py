@@ -29,9 +29,5 @@ sitemaps = {
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('blog/', include('soulink.urls', namespace='blog')),
-   #path('', views.user_login, name='Home'),
     path('sitemap.xml', sitemap, {'sitemaps': sitemaps}, name='django.contrib.sitemaps.views.sitemap'),
-
-
-
 ]

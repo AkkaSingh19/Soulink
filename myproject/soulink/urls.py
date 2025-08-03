@@ -10,14 +10,15 @@ from .views import subscribe_view, unsubscribe
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework import generics
+from .api_views import user_profile
 
 
 app_name = 'blog'  
 
 urlpatterns = [
     path('', views.post_list, name='post_list'),
-    path('tag/<slug:tag_slug>/', views.post_list, name='post_list_by_tag'),
-    path('<int:year>/<int:month>/<int:day>/<slug:post>/', views.post_detail, name='post_detail'),
+    path('tag/', views.post_list, name='post_list_by_tag'),
+    path('<int:year>/<int:month>/<int:day>/', views.post_detail, name='post_detail'),
     path('<int:post_id>/share/', views.post_share, name='post_share'),
     path('feed/', LatestPostsFeed(), name='post_feed'),
     path('search/', views.post_search, name='post_search'),
@@ -29,8 +30,8 @@ urlpatterns = [
 
     #api endpoints
     path('api/posts/', PostListAPIView.as_view(), name= 'post_list_api'),
-    path('api/posts/tag/<slug:tag_slug>', PostListAPIView.as_view(), name= 'post_list_by_tag_api'),
-    path('api/posts/<int:year>/<int:month>/<int:day>/<slug:slug>/', PostDetailAPIView.as_view(), name= 'api_post_detail'),
+    path('api/posts/tag/', PostListAPIView.as_view(), name= 'post_list_by_tag_api'),
+    path('api/posts/<int:year>/<int:month>/<int:day>/', PostDetailAPIView.as_view(), name= 'api_post_detail'),
     path('api/posts/<int:post_id>/comment/', CommentCreateAPIView.as_view(), name='api_add_comment'),
     path('api/posts/<int:post_id>/share/', PostShareAPIView.as_view(), name='post_share_api'),
     path('api/posts/search/', PostSearchAPIView.as_view(), name= 'post_search_api'),
@@ -42,6 +43,7 @@ urlpatterns = [
     path('posts/', UserPostListView.as_view(), name='list_posts'),             # GET user's posts
     path('posts/<int:pk>/', UserPostDetailView.as_view(), name='detail_post'), 
     path('posts/<int:pk>/delete/', UserPostDeleteView.as_view(), name='delete_post'),
+    path("user-profile/", user_profile, name="user-profile"),
 
 ]
 

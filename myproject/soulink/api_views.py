@@ -17,6 +17,8 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateAPIView, DestroyAPIView
+from rest_framework.decorators import api_view, permission_classes
+from django.utils.text import slugify
 
 
 class PostListAPIView(ListAPIView):
@@ -98,14 +100,16 @@ class SignupView(APIView):
     def post(self, request):
         username = request.data.get("username")
         password = request.data.get("password")
+        email = request.data.get("email")  
 
-        if not username or not password:
-            return Response({"error": "Username and password are required"}, status=status.HTTP_400_BAD_REQUEST)
+        
+        if not username or not password or not email:
+            return Response({"error": "Username, email, and password are required"}, status=status.HTTP_400_BAD_REQUEST)
 
         if User.objects.filter(username=username).exists():
             return Response({"error": "Username already exists"}, status=status.HTTP_400_BAD_REQUEST)
 
-        user = User.objects.create_user(username=username, password=password)
+        user = User.objects.create_user(username=username, password=password, email=email) 
 
         refresh = RefreshToken.for_user(user)
 
@@ -127,7 +131,7 @@ class LogoutView(APIView):
             return Response({"message": "Logout successful"}, status=status.HTTP_205_RESET_CONTENT)
         except Exception as e:
             return Response({"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-        
+
 class CreatePostView(CreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
@@ -141,8 +145,13 @@ class UserPostListView(ListAPIView):
     permission_classes = [IsAuthenticated]
 
     def get_queryset(self):
-        return Post.objects.filter(author=self.request.user)
+        status = self.request.query_params.get("status") 
+        queryset = Post.objects.filter(author=self.request.user)
 
+        if status in ["published", "draft"]:
+            queryset = queryset.filter(status=status)
+
+        return queryset.order_by("-publish")
 
 class UserPostDetailView(RetrieveUpdateAPIView):
     serializer_class = PostSerializer
@@ -171,3 +180,13 @@ class UserPostDeleteView(APIView):
 
         post.delete()
         return Response({"message": "Post deleted successfully."}, status=status.HTTP_204_NO_CONTENT)
+
+@api_view(["GET"])
+@permission_classes([IsAuthenticated])
+def user_profile(request):
+    user = request.user
+    return Response({
+        "name": user.get_full_name() or user.username,
+        "email": user.email,
+        "image": user.profile.image.url if hasattr(user, "profile") and user.profile.image else None,
+    })

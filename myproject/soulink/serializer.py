@@ -1,12 +1,17 @@
 from rest_framework import serializers
 from .models import Post, Comment
 from django.db.models import Count
+from taggit.serializers import (TagListSerializerField, TaggitSerializer)
 
+class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
+    tags = TagListSerializerField()
 
-class PostSerializer(serializers.ModelSerializer):
     class Meta:
         model = Post
-        fields = ['id', 'title', 'slug', 'body', 'publish', 'author']
+        fields = ['id', 'title', 'body', 'publish', 'author', 'tags', 'status']  
+        read_only_fields = ['id', 'publish', 'author']
+
+
 
 class CommentSerializer(serializers.ModelSerializer):
     class Meta:
@@ -19,7 +24,7 @@ class PostDetailSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'slug', 'body', 'publish', 'created', 'updated', 'status', 'comments', 'similar_posts']
+        fields = ['id', 'title', 'body', 'publish', 'created', 'updated', 'status', 'comments', 'similar_posts']
 
     def get_comments(self, obj):
         comments = obj.comments.filter(active=True)
@@ -29,7 +34,7 @@ class PostDetailSerializer(serializers.ModelSerializer):
         post_tags_ids = obj.tags.values_list('id', flat=True)
         similar_posts = Post.published.filter(tags__in=post_tags_ids).exclude(id=obj.id)
         similar_posts = similar_posts.annotate(same_tags=Count('tags')).order_by('-same_tags', '-publish')[:4]
-        return [{'title': p.title, 'slug': p.slug, 'id': p.id} for p in similar_posts]
+        return [{'title': p.title, 'id': p.id} for p in similar_posts]
 
 class PostShareSerializer(serializers.Serializer):
     name = serializers.CharField(max_length=100)

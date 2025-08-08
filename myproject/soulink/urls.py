@@ -10,7 +10,7 @@ from .views import subscribe_view, unsubscribe
 from rest_framework_simplejwt.views import TokenObtainPairView, TokenRefreshView
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework import generics
-from .api_views import user_profile
+from .api_views import user_profile, published_posts_count
 
 
 app_name = 'blog'  
@@ -44,6 +44,6 @@ urlpatterns = [
     path('posts/<int:pk>/', UserPostDetailView.as_view(), name='detail_post'), 
     path('posts/<int:pk>/delete/', UserPostDeleteView.as_view(), name='delete_post'),
     path("user-profile/", user_profile, name="user-profile"),
-
+    path('posts/count/', published_posts_count, name='posts-count'),
 ]
 

@@ -12,11 +12,10 @@ export default function PostDetails() {
   const [confirmDelete, setConfirmDelete] = useState(false);
   const [loading, setLoading] = useState(true);
 
-      const token = localStorage.getItem("access");
+  const token = localStorage.getItem("access");
 
   // Fetch post
   useEffect(() => {
-    const token = localStorage.getItem("access");
     if (!id || !token) return;
 
     axios
@@ -31,7 +30,7 @@ export default function PostDetails() {
         console.error("Failed to fetch post", err);
         setLoading(false);
       });
-  }, [id]);
+  }, [id, token]);
 
   // Handle delete
   const handleDelete = async () => {
@@ -54,8 +53,18 @@ export default function PostDetails() {
 
   return (
     <div className="max-w-3xl mx-auto p-6">
-      <h1 className="text-3xl font-bold mb-4">{post.title}</h1>
-      <p className="text-gray-500 mb-2">Published on: {post.publish?.slice(0, 10)}</p>
+      <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
+      <p className="text-gray-500 mb-4">Published on: {post.publish?.slice(0, 10)}</p>
+
+      {/* Image preview */}
+      {post.image && (
+        <img
+          src={post.image}
+          alt="Post"
+          className="w-full max-h-[400px] object-cover rounded mb-6 border"
+        />
+      )}
+
       <p className="text-lg whitespace-pre-wrap mb-6">{post.body}</p>
 
       <div className="space-x-4">

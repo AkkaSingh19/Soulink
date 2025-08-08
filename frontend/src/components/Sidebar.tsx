@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { FileText, File, LogOut } from "lucide-react";
 import { Avatar, AvatarImage } from "./ui/avatar";
 import { GeneratedAvatar } from "./Generated-avatar";
 import { signOut } from "../utils/signout";
+import axios from "axios";
 
 type SidebarProps = {
   user: {
@@ -14,6 +15,25 @@ type SidebarProps = {
 };
 
 export default function Sidebar({ user, onNavigate }: SidebarProps) {
+  const [postCount, setPostCount] = useState<number>(0);
+
+ useEffect(() => {
+  const token = localStorage.getItem("access");
+  if (!token) return;
+
+  axios
+    .get("http://localhost:8000/blog/posts/count/", {
+      headers: { Authorization: `Bearer ${token}` },
+      params: { status: "published" } 
+    })
+    .then((res) => setPostCount(res.data.count))
+    .catch((err) => {
+      console.error("Failed to fetch post count:", err);
+      setPostCount(0);
+    });
+}, []);
+
+
   return (
     <aside className="w-full md:w-1/4 p-4">
       <div className="bg-white rounded-xl shadow p-4 flex flex-col items-center -mt-24">
@@ -34,13 +54,15 @@ export default function Sidebar({ user, onNavigate }: SidebarProps) {
             />
           )}
           <h3 className="text-lg font-semibold">{user?.name}</h3>
-          <p className="text-sm text-gray-500">{user?.email || "guest123@gmail.com"}</p>
+          <p className="text-sm text-gray-500">
+            {user?.email || "guest123@gmail.com"}
+          </p>
         </div>
 
         {/* Stats */}
         <div className="flex justify-around w-full text-center mb-4">
           <div>
-            <p className="font-bold">12</p>
+            <p className="font-bold">{postCount}</p>
             <p className="text-sm text-gray-500">Posts Published</p>
           </div>
           <div>

@@ -1,10 +1,8 @@
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework import generics
-from soulink.models import Post, Comment
 from .serializer import PostSerializer, PostDetailSerializer, CommentSerializer, PostShareSerializer
 from taggit.models import Tag
 from django.shortcuts import get_object_or_404
-from django.db.models import Count
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
@@ -16,9 +14,10 @@ from rest_framework.permissions import AllowAny
 from rest_framework_simplejwt.tokens import RefreshToken
 from django.contrib.auth.models import User
 from rest_framework.permissions import IsAuthenticated
-from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateAPIView, DestroyAPIView
+from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateAPIView
 from rest_framework.decorators import api_view, permission_classes
-from django.utils.text import slugify
+from rest_framework.parsers import MultiPartParser, FormParser
+
 
 
 class PostListAPIView(ListAPIView):
@@ -135,6 +134,7 @@ class LogoutView(APIView):
 class CreatePostView(CreateAPIView):
     serializer_class = PostSerializer
     permission_classes = [IsAuthenticated]
+    parser_classes = [MultiPartParser, FormParser]
 
     def perform_create(self, serializer):
         serializer.save(author=self.request.user)
@@ -190,3 +190,8 @@ def user_profile(request):
         "email": user.email,
         "image": user.profile.image.url if hasattr(user, "profile") and user.profile.image else None,
     })
+
+@api_view(['GET'])
+def published_posts_count(request):
+    count = Post.objects.filter(status="published").count()
+    return Response({"count": count})

@@ -4,13 +4,12 @@ from django.db.models import Count
 from taggit.serializers import (TagListSerializerField, TaggitSerializer)
 
 class PostSerializer(TaggitSerializer, serializers.ModelSerializer):
-    tags = TagListSerializerField()
+    tags = TagListSerializerField() 
 
     class Meta:
         model = Post
-        fields = ['id', 'title', 'body', 'publish', 'author', 'tags', 'status']  
+        fields = ['id', 'title', 'body', 'publish', 'author', 'tags', 'status', 'image']
         read_only_fields = ['id', 'publish', 'author']
-
 
 
 class CommentSerializer(serializers.ModelSerializer):

@@ -23,5 +23,5 @@ export const signOut = async () => {
   localStorage.removeItem("access");
   localStorage.removeItem("refresh");
 
-  window.location.href = "/signin";
+  window.location.href = "/";
 };

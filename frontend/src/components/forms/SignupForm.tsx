@@ -30,8 +30,11 @@ export default function SignupForm() {
     setSuccessMsg("");
 
     try {
-      const res = await axios.post("http://127.0.0.1:8000/blog/api/signup/", formData);
-      setSuccessMsg("Signup successful! Redirecting to login...");
+      const { data } = await axios.post(
+        "http://127.0.0.1:8000/blog/api/signup/",
+        formData
+      );
+      setSuccessMsg(data?.message || "Signup successful! Redirecting to login...");
       setTimeout(() => navigate("/signin"), 2000);
     } catch (err: any) {
       setErrorMsg(err.response?.data?.error || "Signup failed");

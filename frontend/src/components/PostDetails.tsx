@@ -54,7 +54,23 @@ export default function PostDetails() {
   return (
     <div className="max-w-3xl mx-auto p-6">
       <h1 className="text-3xl font-bold mb-2">{post.title}</h1>
-      <p className="text-gray-500 mb-4">Published on: {post.publish?.slice(0, 10)}</p>
+      <p className="text-gray-500 mb-4">
+        Published on: {post.publish?.slice(0, 10)}
+      </p>
+
+      {/* Tags */}
+      {post.tags?.length > 0 && (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {post.tags.map((tag: string, idx: number) => (
+            <span
+              key={idx}
+              className="bg-gray-100 text-gray-700 text-sm px-3 py-1 rounded-full border"
+            >
+              #{tag}
+            </span>
+          ))}
+        </div>
+      )}
 
       {/* Image preview */}
       {post.image && (
@@ -67,23 +83,28 @@ export default function PostDetails() {
 
       <p className="text-lg whitespace-pre-wrap mb-6">{post.body}</p>
 
-      <div className="space-x-4">
-        <Button onClick={() => navigate(`/posts/${id}/edit`)}>Edit Post</Button>
+      {/* Action buttons */}
+      <div className="flex gap-3">
+        <Button 
+        className="bg-gray-400 text-white px-6 py-2 rounded hover:bg-gray-500 transition"
+        onClick={() => navigate(`/posts/${id}/edit`)}>Edit Post</Button>
 
         {!confirmDelete ? (
-          <Button
-            variant="destructive"
-            onClick={() => setConfirmDelete(true)}
-          >
+          <Button variant="destructive" className="bg-red-600 hover:bg-red-800 text-white" onClick={() => setConfirmDelete(true)}>
             Delete
           </Button>
         ) : (
-          <Button
-            variant="destructive"
-            onClick={handleDelete}
-          >
-            Confirm Delete
-          </Button>
+          <>
+            <Button variant="destructive" className="bg-red-600 hover:bg-red-800 text-white" onClick={handleDelete}>
+              Confirm Delete
+            </Button>
+            <Button
+              variant="outline"
+              onClick={() => setConfirmDelete(false)}
+            >
+              Cancel
+            </Button>
+          </>
         )}
       </div>
     </div>

@@ -2,6 +2,7 @@ import { Button } from "./ui/button";
 import { Input } from "./ui/input";
 import { Facebook, Twitter, Instagram, Linkedin, Github } from "lucide-react";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 interface FooterLink {
   label: string;
@@ -106,13 +107,15 @@ export function NewsletterSection() {
         {/* Footer Links */}
         <div className="grid grid-cols-1 md:grid-cols-4 gap-8 pt-12 border-t border-purple-200">
           {/* Brand Section */}
-          <div className="space-y-4">
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-purple-600 rounded-lg flex items-center justify-center">
-                <span className="text-white text-lg">S</span>
-              </div>
+              <div className="space-y-4">
+            <Link to="/" className="flex-shrink-0 flex items-center space-x-2">
+              <img
+                src="/image/soulink-logo.png"
+                alt="Soulink Logo"
+                className="w-8 h-8 object-contain rounded-lg"
+              />
               <span className="text-xl font-semibold text-gray-900">Soulink</span>
-            </div>
+            </Link>
             <p className="text-gray-600 text-sm">
               Connecting ideas, sharing stories, and building meaningful links with a global community.
             </p>

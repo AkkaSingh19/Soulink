@@ -11,6 +11,7 @@ import PrivateRoute from "./components/PrivateRoute";
 import Dashboard from "./pages/Dashboard";
 import PostDetails from "./components/PostDetails";
 import EditPost from "./pages/EditPost";
+import TagsPage from "./pages/TagsPage";
 
 function LandingPage() {
   return (
@@ -51,6 +52,7 @@ function App() {
         <Route path="/posts/:id/edit" element={<EditPost />} />
 
         <Route path="/stories" element={<AllStories />} />
+        <Route path="/tags/:tags" element={<TagsPage />} />
       </Routes>
     </Router>
   );

@@ -8,53 +8,105 @@ import { useNavigate } from "react-router-dom";
 
 interface ApiPost {
   id: number;
-  title: string;
-  publish: string;      
-  author: string;       
-  image: string;
-  tags: string[];
+  title?: string;
+  publish?: string;
+  published_date?: string;
+  author?: string;
+  author_name?: string;
+  image?: string | null;
+  cover_image?: string | null;
+  tags?: any[]; 
   read_time?: number;
+  content?: string;
+  excerpt?: string;
+  summary?: string;
+  body?: string;
+  slug?: string;
+  url?: string;
 }
 
 interface BlogPost {
-  id: number;
+  id: number | string;
   title: string;
-  published_date: string; 
-  author_name: string;   
-  image: string;
+  published_date?: string;
+  author_name?: string;
+  image?: string | null;
   tags: string[];
   read_time: number;
+  excerpt: string; 
+  slug?: string;
+  url?: string;
 }
+
+const makeExcerpt = (p: ApiPost, max = 220) => {
+  const raw = p.excerpt ?? p.summary ?? p.content ?? p.body ?? "";
+  const text = String(raw).replace(/<[^>]+>/g, " ").replace(/\s+/g, " ").trim();
+  if (!text) return "";
+  return text.length > max ? text.slice(0, max).trim() + "…" : text;
+};
+
+const normalizeTags = (raw: any[] | undefined): string[] => {
+  if (!Array.isArray(raw)) return [];
+  return raw
+    .map((t) => {
+      if (!t && t !== 0) return null;
+      if (typeof t === "string") return t;
+      if (typeof t === "object") return (t.name ?? t.title ?? t.tag ?? JSON.stringify(t)).toString();
+      return String(t);
+    })
+    .filter(Boolean) as string[];
+};
 
 export function FeaturedPosts() {
   const [posts, setPosts] = useState<BlogPost[]>([]);
   const navigate = useNavigate();
 
   useEffect(() => {
-    fetch("http://localhost:8000/blog/api/posts/")
-      .then(res => res.json())
-      .then(data => {
-        const arr: ApiPost[] = Array.isArray(data) ? data : (data?.results ?? []);
-        const mapped: BlogPost[] = arr.slice(0, 6).map(p => ({
-          id: p.id,
-          title: p.title,
-          published_date: p.publish,         
-          author_name: p.author || "Unknown",
-          image: p.image,
-          tags: p.tags ?? [],
-          read_time: p.read_time ?? 2,
-        }));
+    (async () => {
+      try {
+        const res = await fetch("http://localhost:8000/blog/api/posts/");
+        const data = await res.json();
+
+        const arr: ApiPost[] = Array.isArray(data)
+          ? data
+          : Array.isArray(data?.results)
+          ? data.results
+          : Array.isArray(data?.data)
+          ? data.data
+          : Array.isArray(data?.posts)
+          ? data.posts
+          : [];
+
+        const mapped: BlogPost[] = arr.slice(0, 6).map((p) => {
+          const tags = normalizeTags(p.tags);
+          const excerpt = makeExcerpt(p, 260) || (p.title ?? "").slice(0, 240);
+
+          return {
+            id: p.id,
+            title: p.title ?? "Untitled",
+            published_date: p.publish ?? p.published_date ?? "",
+            author_name: p.author ?? p.author_name ?? "Unknown",
+            image: p.image ?? p.cover_image ?? null,
+            tags,
+            read_time: p.read_time ?? 2,
+            excerpt,
+            slug: p.slug,
+            url: p.url,
+          };
+        });
+
         setPosts(mapped);
-      })
-      .catch(err => console.error("Error fetching posts:", err));
+      } catch (err) {
+        console.error("Error fetching posts:", err);
+      }
+    })();
   }, []);
 
-  
   const formatPublish = (s: string | undefined) => {
     if (!s) return "—";
-    const [datePart, timePart = "00:00:00"] = s.split(" ");
-    const [y, m, d] = datePart.split("-").map(Number);
-    const [hh, mm, ss] = timePart.split(":").map(Number);
+    const [datePart, timePart = "00:00:00"] = String(s).split(" ");
+    const [y, m, d] = (datePart || "").split("-").map(Number);
+    const [hh, mm, ss] = (timePart || "").split(":").map(Number);
     const dte = new Date(y, (m ?? 1) - 1, d ?? 1, hh ?? 0, mm ?? 0, ss ?? 0);
     if (isNaN(dte.getTime())) return s;
     return dte.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" });
@@ -71,47 +123,59 @@ export function FeaturedPosts() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
-          {posts.map(post => (
+          {posts.map((post) => (
             <Card
               key={post.id}
               className="group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-md"
-              onClick={() => navigate(`/posts/${post.id}`)}
+              onClick={() => navigate(post.url ?? `/posts/${post.slug ?? post.id}`)}
             >
               <div className="aspect-video overflow-hidden relative">
-                <ImageWithFallback
-                  src={post.image}
-                  alt={post.title}
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-                />
+                {post.image ? (
+                  <ImageWithFallback
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
+                  />
+                ) : (
+                  <div className="w-full h-full bg-gradient-to-br from-purple-600 to-purple-800" />
+                )}
               </div>
+
               <CardContent className="p-6">
                 <div className="space-y-3">
                   <h3 className="font-semibold text-gray-900 group-hover:text-purple-600 transition-colors line-clamp-2">
                     {post.title}
                   </h3>
 
+                  <p className="mt-2 text-sm text-slate-600 line-clamp-4">
+                    {post.excerpt}
+                  </p>
+
                   {/* Tags */}
-                  <div className="flex flex-wrap gap-2">
+                  <div className="flex flex-wrap gap-2 mt-2">
                     {post.tags && post.tags.length > 0 ? (
-                      post.tags.map((tag: any) => (
-                        <button
-                          key={tag.name}
-                          onClick={(e) => {
-                            e.stopPropagation();
-                            navigate(`/tags/${encodeURIComponent(tag.name)}`);
-                          }}
-                          className="bg-purple-100 text-black px-3 py-1 rounded-full text-xs font-medium hover:bg-purple-200 transition-colors"
-                        >
-                          #{tag.name}
-                        </button>
-                      ))
+                      post.tags.map((tag) => {
+                        const label = String(tag);
+                        return (
+                          <button
+                            key={label}
+                            onClick={(e) => {
+                              e.stopPropagation();
+                              navigate(`/tags/${encodeURIComponent(label)}`);
+                            }}
+                            className="bg-purple-100 text-black px-3 py-1 rounded-full text-xs font-medium hover:bg-purple-200 transition-colors"
+                          >
+                            #{label}
+                          </button>
+                        );
+                      })
                     ) : (
                       <span className="text-gray-500 text-sm">No tags</span>
                     )}
                   </div>
 
                   {/* Author & date */}
-                  <div className="flex items-center justify-between text-xs text-gray-500">
+                  <div className="flex items-center justify-between text-xs text-gray-500 mt-3">
                     <div className="flex items-center gap-4">
                       <div className="flex items-center gap-1">
                         <User className="w-3 h-3" />
@@ -122,10 +186,10 @@ export function FeaturedPosts() {
                         <span>{formatPublish(post.published_date)}</span>
                       </div>
                     </div>
-                  </div>
 
-                  <div className="flex items-center justify-between pt-2 border-t border-gray-100">
-                    <span className="text-xs text-gray-500">{post.read_time} min read</span>
+                    <div className="text-xs text-gray-500">
+                      <span>{post.read_time} min read</span>
+                    </div>
                   </div>
                 </div>
               </CardContent>

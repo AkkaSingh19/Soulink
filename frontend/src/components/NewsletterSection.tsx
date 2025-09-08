@@ -95,7 +95,7 @@ export function NewsletterSection() {
                 />
                 <Button 
                   type="submit"
-                  className="bg-purple-600 hover:bg-purple-700 px-8"
+                  className="bg-purple-400 hover:bg-purple-700 px-8"
                 >
                   Subscribe
                 </Button>

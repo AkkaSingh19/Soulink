@@ -140,7 +140,7 @@ export function Header() {
                     <Button asChild variant="ghost" className="text-gray-600 flex-1">
                       <Link to="/signin">Sign In</Link>
                     </Button>
-                    <Button asChild className="bg-purple-600 hover:bg-purple-700 flex-1">
+                    <Button asChild className="bg-purple-400 hover:bg-purple-700 flex-1">
                       <Link to="/signup">Sign Up</Link>
                     </Button>
                   </div>

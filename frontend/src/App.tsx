@@ -14,6 +14,7 @@ import EditPost from "./pages/EditPost";
 import TagsPage from "./pages/TagsPage";
 import PostDetailPage from "./pages/PostDetailPage";
 
+
 function LandingPage() {
   return (
     <div className="min-h-screen bg-white">

@@ -1,4 +1,3 @@
-// src/pages/PostDetails.tsx
 "use client";
 
 import { useParams, useNavigate } from "react-router-dom";

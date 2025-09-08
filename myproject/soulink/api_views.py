@@ -17,6 +17,8 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.generics import CreateAPIView, ListAPIView, RetrieveUpdateAPIView
 from rest_framework.decorators import api_view, permission_classes
 from rest_framework.parsers import MultiPartParser, FormParser
+from datetime import date
+
 
 
 
@@ -34,31 +36,35 @@ class PostListAPIView(ListAPIView):
     
 
 class PostDetailAPIView(RetrieveAPIView):
+    queryset = Post.objects.filter(status="published")
     serializer_class = PostDetailSerializer
 
     def get_object(self):
-        year = self.kwargs['year']
-        month = self.kwargs['month']
-        day = self.kwargs['day']
-        slug = self.kwargs['slug']
-
-        return get_object_or_404(
-            Post,
-            slug=slug,
-            status='published',
-            publish__year=year,
-            publish__month=month,
-            publish__day=day
+        post = super().get_object()
+        url_date = date(
+            int(self.kwargs["year"]),
+            int(self.kwargs["month"]),
+            int(self.kwargs["day"])
         )
+        if post.publish.date() != url_date:
+            raise Http404("No Post matches the given query.")
+        return post
+    
 
 class CommentCreateAPIView(generics.CreateAPIView):
     serializer_class = CommentSerializer
+    permission_classes = [AllowAny]   
 
     def perform_create(self, serializer):
-        post_id = self.kwargs.get('post_id')
-        post = get_object_or_404(Post, id=post_id, status='published')
+        post_id = self.kwargs.get("pk")   
+        post = get_object_or_404(Post, id=post_id, status="published")
         serializer.save(post=post)
 
+    def create(self, request, *args, **kwargs):
+        serializer = self.get_serializer(data=request.data)
+        serializer.is_valid(raise_exception=True)
+        self.perform_create(serializer)
+        return Response(serializer.data, status=status.HTTP_201_CREATED)
 
 class PostShareAPIView(APIView):
     def post(self, request, post_id):

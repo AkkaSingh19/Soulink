@@ -127,7 +127,17 @@ export function FeaturedPosts() {
             <Card
               key={post.id}
               className="group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-md"
-              onClick={() => navigate(post.url ?? `/posts/${post.slug ?? post.id}`)}
+              onClick={() => {
+                if (post.published_date) {
+                  const date = new Date(post.published_date);
+                  const year = date.getFullYear();
+                  const month = String(date.getMonth() + 1).padStart(2, "0");
+                  const day = String(date.getDate()).padStart(2, "0");
+                  navigate(`/posts/${year}/${month}/${day}/${post.id}`);
+                } else {
+                  navigate(`/posts/${post.id}`); 
+                }
+              }}
             >
               <div className="aspect-video overflow-hidden relative">
                 {post.image ? (

@@ -31,9 +31,9 @@ urlpatterns = [
     #api endpoints
     path('api/posts/', PostListAPIView.as_view(), name= 'post_list_api'),
     path('api/posts/tag/', PostListAPIView.as_view(), name= 'post_list_by_tag_api'),
-    path('api/posts/<int:year>/<int:month>/<int:day>/', PostDetailAPIView.as_view(), name= 'api_post_detail'),
-    path('api/posts/<int:post_id>/comment/', CommentCreateAPIView.as_view(), name='api_add_comment'),
-    path('api/posts/<int:post_id>/share/', PostShareAPIView.as_view(), name='post_share_api'),
+    path("api/posts/<int:year>/<int:month>/<int:day>/<int:pk>/", PostDetailAPIView.as_view(), name="api_post_detail",),
+    path("api/posts/<int:pk>/comment/", CommentCreateAPIView.as_view(), name="api_post_comment"),
+    path("api/posts/<int:pk>/share/", PostShareAPIView.as_view(), name="api_post_share"),
     path('api/posts/search/', PostSearchAPIView.as_view(), name= 'post_search_api'),
     path('api/signup/', SignupView.as_view(), name='signup'),
     path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),  # signin

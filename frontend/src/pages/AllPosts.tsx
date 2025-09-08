@@ -170,7 +170,17 @@ const AllStories: React.FC = () => {
             key={post.id}
             className={`group cursor-pointer hover:shadow-xl transition-all duration-300 overflow-hidden border-0 shadow-md 
               ${viewMode === "list" ? "grid grid-cols-[8rem_1fr] gap-4 p-4 items-start" : ""}`}
-            onClick={() => navigate(`/posts/${post.id}`)}
+             onClick={() => {
+                if (post.published_date) {
+                  const date = new Date(post.published_date);
+                  const year = date.getFullYear();
+                  const month = String(date.getMonth() + 1).padStart(2, "0");
+                  const day = String(date.getDate()).padStart(2, "0");
+                  navigate(`/posts/${year}/${month}/${day}/${post.id}`);
+                } else {
+                  navigate(`/posts/${post.id}`); 
+                }
+              }}
           >
             <div className={`${viewMode === "list" ? "w-32 h-32" : "aspect-video w-full"} overflow-hidden rounded-md`}>
               <ImageWithFallback
@@ -225,7 +235,7 @@ const AllStories: React.FC = () => {
               </div>
 
               <div className="flex items-center justify-between pt-2 border-t border-gray-100 mt-3">
-                <span className="text-xs text-gray-500">{post.read_time} 2 min read</span>
+                <span className="text-xs text-gray-500">{post.read_time} min read</span>
               </div>
             </CardContent>
           </Card>

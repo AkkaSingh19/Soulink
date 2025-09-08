@@ -12,6 +12,7 @@ import Dashboard from "./pages/Dashboard";
 import PostDetails from "./components/PostDetails";
 import EditPost from "./pages/EditPost";
 import TagsPage from "./pages/TagsPage";
+import PostDetailPage from "./pages/PostDetailPage";
 
 function LandingPage() {
   return (
@@ -53,6 +54,7 @@ function App() {
 
         <Route path="/stories" element={<AllStories />} />
         <Route path="/tags/:tags" element={<TagsPage />} />
+        <Route path="/posts/:year/:month/:day/:id" element={<PostDetailPage />} />
       </Routes>
     </Router>
   );
